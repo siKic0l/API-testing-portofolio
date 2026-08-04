@@ -1224,14 +1224,14 @@ This test verifies the endpoint's resilience against excessively long input valu
 
 | Coverage | Status |
 |----------|:------:|
-| Positive Testing | ✅ |
-| Negative Testing | ✅ |
-| Required Field Validation | ✅ |
-| Authentication Validation | ✅ |
-| Request Validation | ✅ |
-| Header Validation | ✅ |
-| HTTP Method Validation | ✅ |
-| Boundary Testing | ✅ |
+| Positive Testing | Yes |
+| Negative Testing | Yes |
+| Required Field Validation | Yes |
+| Authentication Validation | Yes |
+| Request Validation | Yes |
+| Header Validation | Yes |
+| HTTP Method Validation | Yes |
+| Boundary Testing | Yes |
 
 ---
 
