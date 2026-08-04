@@ -2,9 +2,11 @@
 
 ## Overview
 
-This document contains all test cases related to the **Authentication** endpoint of the RESTful Booker API.
+This document contains detailed test cases for the **Authentication** endpoint of the RESTful Booker API.
 
-The purpose of these test cases is to verify that the authentication mechanism correctly validates user credentials, generates authentication tokens, handles invalid requests, and returns appropriate HTTP status codes.
+The objective of these test cases is to verify that the authentication endpoint correctly validates user credentials, generates authentication tokens, rejects invalid requests, and handles malformed input appropriately.
+
+These test cases will be executed manually using Postman, managed in Qase.io, and later automated using Postman Test Scripts and Newman.
 
 ---
 
@@ -14,12 +16,17 @@ The purpose of these test cases is to verify that the authentication mechanism c
 |------|--------|
 | Endpoint | `/auth` |
 | Method | POST |
-| Authentication | Not Required |
+| Authentication Required | No |
+| Content-Type | application/json |
 | Expected Success Status | 200 OK |
 
 ---
 
 # Test Cases
+
+---
+
+# Positive Testing
 
 ---
 
@@ -30,15 +37,13 @@ The purpose of these test cases is to verify that the authentication mechanism c
 | Field | Value |
 |------|--------|
 | Test Case ID | TC-AUTH-001 |
-| Test Scenario | SC-AUTH-001 |
+| Scenario | SC-AUTH-001 |
 | Priority | High |
-| Testing Type | Positive |
-| HTTP Method | POST |
-| Endpoint | `/auth` |
+| Type | Positive |
 
 ### Objective
 
-Verify that a valid authentication token is generated when correct credentials are provided.
+Verify that the API successfully generates an authentication token when valid credentials are provided.
 
 ### Preconditions
 
@@ -54,224 +59,359 @@ Content-Type: application/json
 
 ```json
 {
-  "username": "admin",
-  "password": "password123"
+    "username":"admin",
+    "password":"password123"
 }
 ```
 
-### Test Steps
-
-1. Send a POST request to `/auth`.
-2. Provide valid username and password.
-3. Submit the request.
-
 ### Expected Result
 
-- Status Code is **200 OK**
-- Response contains a valid authentication token.
-- Response body is returned in JSON format.
+- Status Code is **200**
+- Response Body contains **token**
+- Token value is not empty
+
+---
+
+# Negative Testing
 
 ---
 
 ## TC-AUTH-002
 
-### Test Information
-
-| Field | Value |
-|------|--------|
-| Test Case ID | TC-AUTH-002 |
-| Test Scenario | SC-AUTH-002 |
-| Priority | High |
-| Testing Type | Negative |
-| HTTP Method | POST |
-| Endpoint | `/auth` |
-
 ### Objective
 
-Verify that authentication fails when an invalid username is provided.
+Verify authentication fails when an invalid username is provided.
 
-### Preconditions
-
-- RESTful Booker API is accessible.
-
-### Request Headers
-
-```http
-Content-Type: application/json
-```
-
-### Request Body
+Request
 
 ```json
 {
-  "username": "invaliduser",
-  "password": "password123"
+    "username":"invaliduser",
+    "password":"password123"
 }
 ```
 
-### Test Steps
+Expected Result
 
-1. Send a POST request to `/auth`.
-2. Enter an invalid username.
-3. Submit the request.
-
-### Expected Result
-
-- Status Code is **200 OK**
-- Response contains
+- Status Code is **200**
+- Response
 
 ```json
 {
-  "reason": "Bad credentials"
+    "reason":"Bad credentials"
 }
 ```
-
-- No authentication token is generated.
 
 ---
 
 ## TC-AUTH-003
 
-### Test Information
-
-| Field | Value |
-|------|--------|
-| Test Case ID | TC-AUTH-003 |
-| Test Scenario | SC-AUTH-003 |
-| Priority | High |
-| Testing Type | Negative |
-| HTTP Method | POST |
-| Endpoint | `/auth` |
-
 ### Objective
 
-Verify that authentication fails when an invalid password is provided.
+Verify authentication fails when an invalid password is provided.
 
-### Request Headers
-
-```http
-Content-Type: application/json
-```
-
-### Request Body
+Request
 
 ```json
 {
-  "username": "admin",
-  "password": "wrongpassword"
+    "username":"admin",
+    "password":"wrongpassword"
 }
 ```
 
-### Test Steps
+Expected Result
 
-1. Send a POST request.
-2. Enter an invalid password.
-3. Submit the request.
-
-### Expected Result
-
-- Status Code is **200 OK**
-- Response contains
-
-```json
-{
-  "reason": "Bad credentials"
-}
-```
-
-- No authentication token is generated.
+- Status Code is **200**
+- Bad credentials returned
 
 ---
 
 ## TC-AUTH-004
 
-### Test Information
-
-| Field | Value |
-|------|--------|
-| Test Case ID | TC-AUTH-004 |
-| Test Scenario | SC-AUTH-004 |
-| Priority | Medium |
-| Testing Type | Negative |
-| HTTP Method | POST |
-| Endpoint | `/auth` |
-
 ### Objective
 
-Verify the API response when both username and password are empty.
+Verify authentication fails when both username and password are invalid.
 
-### Request Body
+Request
 
 ```json
 {
-  "username": "",
-  "password": ""
+    "username":"wrong",
+    "password":"wrong"
 }
 ```
 
-### Test Steps
+Expected Result
 
-1. Send a POST request.
-2. Leave username empty.
-3. Leave password empty.
-4. Submit the request.
-
-### Expected Result
-
-- Status Code is **200 OK**
-- Authentication is rejected.
-- No authentication token is generated.
+- Bad credentials returned
+- Token is not generated
 
 ---
 
 ## TC-AUTH-005
 
-### Test Information
-
-| Field | Value |
-|------|--------|
-| Test Case ID | TC-AUTH-005 |
-| Test Scenario | SC-AUTH-005 |
-| Priority | Medium |
-| Testing Type | Negative |
-| HTTP Method | POST |
-| Endpoint | `/auth` |
-
 ### Objective
 
-Verify API behavior when the request body contains malformed JSON.
+Verify authentication fails when username is empty.
 
-### Request Body
+Request
 
 ```json
 {
-  "username": "admin",
-  "password":
+    "username":"",
+    "password":"password123"
 }
 ```
 
-### Test Steps
+Expected Result
 
-1. Send a malformed JSON request.
-2. Submit the request.
+- Authentication rejected
 
-### Expected Result
+---
 
-- Status Code indicates an invalid request.
-- Authentication token is not generated.
-- Appropriate error response is returned.
+## TC-AUTH-006
+
+### Objective
+
+Verify authentication fails when password is empty.
+
+Request
+
+```json
+{
+    "username":"admin",
+    "password":""
+}
+```
+
+Expected Result
+
+- Authentication rejected
+
+---
+
+## TC-AUTH-007
+
+### Objective
+
+Verify authentication fails when both credentials are empty.
+
+Request
+
+```json
+{
+    "username":"",
+    "password":""
+}
+```
+
+Expected Result
+
+- Authentication rejected
+
+---
+
+## TC-AUTH-008
+
+### Objective
+
+Verify API behavior when username field is missing.
+
+Request
+
+```json
+{
+    "password":"password123"
+}
+```
+
+Expected Result
+
+- Authentication rejected
+
+---
+
+## TC-AUTH-009
+
+### Objective
+
+Verify API behavior when password field is missing.
+
+Request
+
+```json
+{
+    "username":"admin"
+}
+```
+
+Expected Result
+
+- Authentication rejected
+
+---
+
+## TC-AUTH-010
+
+### Objective
+
+Verify API behavior when request body is empty.
+
+Request
+
+```json
+{}
+```
+
+Expected Result
+
+- Authentication rejected
+
+---
+
+## TC-AUTH-011
+
+### Objective
+
+Verify API behavior when malformed JSON is submitted.
+
+Request
+
+```json
+{
+    "username":"admin",
+    "password":
+}
+```
+
+Expected Result
+
+- Invalid request is returned
+- Token is not generated
+
+---
+
+## TC-AUTH-012
+
+### Objective
+
+Verify API behavior when Content-Type is incorrect.
+
+Header
+
+```http
+Content-Type: text/plain
+```
+
+Expected Result
+
+- API rejects unsupported content type or returns appropriate error
+
+---
+
+## TC-AUTH-013
+
+### Objective
+
+Verify endpoint rejects unsupported HTTP methods.
+
+Method
+
+```http
+GET /auth
+```
+
+Expected Result
+
+- Method not allowed
+- Appropriate HTTP status code returned
+
+---
+
+## TC-AUTH-014
+
+### Objective
+
+Verify API ignores or rejects unexpected additional fields.
+
+Request
+
+```json
+{
+    "username":"admin",
+    "password":"password123",
+    "role":"administrator"
+}
+```
+
+Expected Result
+
+- Authentication still behaves correctly
+- No unexpected behavior occurs
+
+---
+
+# Boundary Testing
+
+---
+
+## TC-AUTH-015
+
+### Objective
+
+Verify API behavior when extremely long username and password values are submitted.
+
+Request
+
+```json
+{
+    "username":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "password":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+}
+```
+
+Expected Result
+
+- Authentication rejected
+- API remains stable
+- No server error occurs
 
 ---
 
 # Test Case Summary
 
-| ID | Scenario | Priority | Type |
-|----|----------|----------|------|
-| TC-AUTH-001 | Valid Authentication | High | Positive |
-| TC-AUTH-002 | Invalid Username | High | Negative |
-| TC-AUTH-003 | Invalid Password | High | Negative |
-| TC-AUTH-004 | Empty Credentials | Medium | Negative |
-| TC-AUTH-005 | Malformed JSON | Medium | Negative |
+| ID | Category | Priority |
+|----|----------|----------|
+| TC-AUTH-001 | Valid Authentication | High |
+| TC-AUTH-002 | Invalid Username | High |
+| TC-AUTH-003 | Invalid Password | High |
+| TC-AUTH-004 | Invalid Credentials | High |
+| TC-AUTH-005 | Empty Username | Medium |
+| TC-AUTH-006 | Empty Password | Medium |
+| TC-AUTH-007 | Empty Credentials | Medium |
+| TC-AUTH-008 | Missing Username | Medium |
+| TC-AUTH-009 | Missing Password | Medium |
+| TC-AUTH-010 | Empty Request Body | Medium |
+| TC-AUTH-011 | Malformed JSON | Medium |
+| TC-AUTH-012 | Invalid Content-Type | Medium |
+| TC-AUTH-013 | Unsupported HTTP Method | Low |
+| TC-AUTH-014 | Unexpected Fields | Low |
+| TC-AUTH-015 | Boundary Input Length | Low |
+
+---
+
+# Coverage Summary
+
+| Coverage | Status |
+|----------|:------:|
+| Positive Testing | Yes |
+| Negative Testing | Yes |
+| Required Field Validation | Yes |
+| Authentication Validation | Yes |
+| Request Validation | Yes |
+| Header Validation | Yes |
+| HTTP Method Validation | Yes |
+| Boundary Value Testing | Yes |
 
 ---
 
@@ -280,7 +420,7 @@ Verify API behavior when the request body contains malformed JSON.
 - Test Plan
 - Test Scenarios
 - Test Data
-- Endpoint Analysis
+- API Documentation
 - Postman Collection
 - Qase Test Cases
 
@@ -291,3 +431,4 @@ Verify API behavior when the request body contains malformed JSON.
 | Version | Description |
 |----------|-------------|
 | 1.0 | Initial Authentication Test Cases |
+| 1.1 | Expanded authentication coverage with comprehensive positive, negative, validation, and boundary test cases |
