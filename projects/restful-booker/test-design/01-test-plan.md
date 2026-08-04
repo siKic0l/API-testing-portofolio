@@ -19,6 +19,8 @@
 |----------|-------------|
 | 1.0 | Initial API Test Plan |
 | 1.1 | Test Design Phase Completed |
+| 1.2 | Manual API Testing Completed (Planned) |
+| 1.3 | API Automation Completed (Planned) |
 
 ---
 
