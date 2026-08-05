@@ -1054,14 +1054,14 @@ This test verifies the fundamental behavior of the PATCH method by ensuring part
 
 | Coverage | Status |
 |----------|:------:|
-| Partial Field Update | ✅ |
-| Required Field Validation | ✅ |
-| Data Type Validation | ✅ |
-| Date Validation | ✅ |
-| Authentication Validation | ✅ |
-| Invalid Booking Validation | ✅ |
-| Response Schema Validation | ✅ |
-| End-to-End Partial Update Verification | ✅ |
+| Partial Field Update | Yes |
+| Required Field Validation | Yes |
+| Data Type Validation | Yes |
+| Date Validation | Yes |
+| Authentication Validation | Yes |
+| Invalid Booking Validation | Yes |
+| Response Schema Validation | Yes |
+| End-to-End Partial Update Verification | Yes |
 
 ---
 
