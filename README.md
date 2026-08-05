@@ -70,7 +70,7 @@ api-testing-portfolio
 │       ├── test-design
 │       │   ├── 01-test-plan.md
 │       │   ├── 02-test-scenarios.md
-│       │   ├── 03-test-cases.md
+│       │   ├── 03-test-cases
 │       │   └── 04-test-data.md
 │       │
 │       ├── test-execution
