@@ -41,8 +41,7 @@ The objectives of this directory are to:
 │   ├── delete-booking.md
 │   └── booking-list.md
 │
-└── health-check
-    └── ping-test-cases.md
+└── health-check-test-cases.md
 ```
 
 ---
