@@ -34,12 +34,6 @@ The following preconditions apply to all test cases unless otherwise stated.
 
 ---
 
-# Shared Request Headers
-
-No custom request headers are required.
-
----
-
 # Positive Testing
 
 ## TC-BOOK-GET-001
