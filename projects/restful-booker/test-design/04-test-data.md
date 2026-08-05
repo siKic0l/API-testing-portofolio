@@ -2,23 +2,23 @@
 
 ## Overview
 
-This document contains the test data used throughout the manual API testing activities for the RESTful Booker API.
+This document contains the standardized test data used throughout the manual API testing activities for the RESTful Booker API.
 
-The purpose of this document is to ensure consistent, reusable, and traceable test data across all test cases and execution activities.
+The purpose of this document is to ensure consistent, reusable, and traceable test data across all test scenarios, test cases, manual executions, and future automation testing.
 
 ---
 
 # Purpose
 
-This test data supports the following testing activities:
+This document serves as the central reference for all test data used during testing.
 
-- Authentication Testing
-- Create Booking
-- Get Booking
-- Update Booking
-- Partial Update
-- Delete Booking
-- Health Check
+It helps ensure:
+
+- Consistent test execution
+- Reusable test datasets
+- Easier maintenance
+- Better traceability
+- Standardized documentation
 
 ---
 
@@ -33,9 +33,9 @@ This test data supports the following testing activities:
 
 ---
 
-# Authentication Data
+# Authentication Test Data
 
-## Valid Credentials
+## TD-AUTH-001 — Valid Credential
 
 | Field | Value |
 |------|--------|
@@ -44,98 +44,299 @@ This test data supports the following testing activities:
 
 ---
 
-## Invalid Credentials
-
-| Username | Password | Purpose |
-|-----------|----------|----------|
-| admin | wrongpassword | Invalid Password |
-| wronguser | password123 | Invalid Username |
-| wronguser | wrongpassword | Invalid Credentials |
-| *(empty)* | password123 | Empty Username |
-| admin | *(empty)* | Empty Password |
-| *(empty)* | *(empty)* | Empty Credentials |
-
----
-
-# Booking Data
-
-## Valid Booking Data
+## TD-AUTH-002 — Invalid Password
 
 | Field | Value |
 |------|--------|
-| firstname | Michael |
-| lastname | Scott |
-| totalprice | 250 |
-| depositpaid | true |
-| checkin | 2026-09-01 |
-| checkout | 2026-09-05 |
-| additionalneeds | Breakfast |
+| Username | admin |
+| Password | wrongpassword |
 
 ---
 
-## Boundary Value Data
-
-| Field | Value | Purpose |
-|------|--------|----------|
-| firstname | A | Minimum length |
-| firstname | 100 Characters | Long input |
-| totalprice | 0 | Minimum numeric value |
-| totalprice | 999999 | Large numeric value |
-
----
-
-## Invalid Data
-
-| Field | Value | Purpose |
-|------|--------|----------|
-| firstname | *(empty)* | Empty string |
-| firstname | null | Null value |
-| totalprice | invalid | Invalid data type |
-| depositpaid | invalid | Invalid boolean |
-| checkin | 01/09/2026 | Invalid date format |
-| checkout | yesterday | Invalid date |
-
----
-
-## Update Test Data
-
-Used for **PUT /booking/{id}**
+## TD-AUTH-003 — Invalid Username
 
 | Field | Value |
 |------|--------|
-| firstname | Dwight |
-| lastname | Schrute |
-| totalprice | 500 |
-| depositpaid | false |
-| checkin | 2026-10-01 |
-| checkout | 2026-10-05 |
-| additionalneeds | Lunch |
+| Username | wronguser |
+| Password | password123 |
 
 ---
 
-## Partial Update Test Data
-
-Used for **PATCH /booking/{id}**
+## TD-AUTH-004 — Invalid Credential
 
 | Field | Value |
 |------|--------|
-| firstname | Jim |
-| lastname | Halpert |
-| additionalneeds | Dinner |
+| Username | wronguser |
+| Password | wrongpassword |
 
 ---
 
-# Special Characters
+## TD-AUTH-005 — Empty Username
 
-The following values are used for input validation.
+| Field | Value |
+|------|--------|
+| Username | *(empty)* |
+| Password | password123 |
 
-| Test Value | Purpose |
-|------------|----------|
+---
+
+## TD-AUTH-006 — Empty Password
+
+| Field | Value |
+|------|--------|
+| Username | admin |
+| Password | *(empty)* |
+
+---
+
+## TD-AUTH-007 — Empty Credential
+
+| Field | Value |
+|------|--------|
+| Username | *(empty)* |
+| Password | *(empty)* |
+
+---
+
+# Create Booking Test Data
+
+## TD-BOOK-001 — Valid Booking
+
+```json
+{
+  "firstname": "James",
+  "lastname": "Brown",
+  "totalprice": 250,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-002 — Empty First Name
+
+```json
+{
+  "firstname": "",
+  "lastname": "Brown",
+  "totalprice": 250,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-003 — Empty Last Name
+
+```json
+{
+  "firstname": "James",
+  "lastname": "",
+  "totalprice": 250,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-004 — Invalid Total Price
+
+```json
+{
+  "firstname": "James",
+  "lastname": "Brown",
+  "totalprice": "invalid",
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-005 — Invalid Deposit Paid
+
+```json
+{
+  "firstname": "James",
+  "lastname": "Brown",
+  "totalprice": 250,
+  "depositpaid": "true",
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-006 — Invalid Check-in Date
+
+```json
+{
+  "firstname": "James",
+  "lastname": "Brown",
+  "totalprice": 250,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "01/09/2026",
+    "checkout": "2026-09-05"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+## TD-BOOK-007 — Invalid Checkout Date
+
+```json
+{
+  "firstname": "James",
+  "lastname": "Brown",
+  "totalprice": 250,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-09-01",
+    "checkout": "05/09/2026"
+  },
+  "additionalneeds": "Breakfast"
+}
+```
+
+---
+
+# Get Booking Test Data
+
+## TD-GET-001 — Existing Booking ID
+
+A valid Booking ID created during testing.
+
+---
+
+## TD-GET-002 — Non-existing Booking ID
+
+```
+99999999
+```
+
+---
+
+## TD-GET-003 — Invalid Booking ID
+
+```
+abc
+```
+
+---
+
+# Update Booking Test Data
+
+## TD-UPD-001 — Valid Full Update
+
+```json
+{
+  "firstname": "Dwight",
+  "lastname": "Schrute",
+  "totalprice": 500,
+  "depositpaid": false,
+  "bookingdates": {
+    "checkin": "2026-10-01",
+    "checkout": "2026-10-05"
+  },
+  "additionalneeds": "Lunch"
+}
+```
+
+---
+
+# Partial Update Test Data
+
+## TD-PATCH-001 — Update First Name
+
+```json
+{
+  "firstname": "Jim"
+}
+```
+
+---
+
+## TD-PATCH-002 — Update Last Name
+
+```json
+{
+  "lastname": "Halpert"
+}
+```
+
+---
+
+## TD-PATCH-003 — Update Additional Needs
+
+```json
+{
+  "additionalneeds": "Dinner"
+}
+```
+
+---
+
+# Delete Booking Test Data
+
+## TD-DEL-001 — Existing Booking
+
+Existing Booking ID generated during testing.
+
+---
+
+## TD-DEL-002 — Non-existing Booking
+
+```
+99999999
+```
+
+---
+
+## TD-DEL-003 — Invalid Booking ID
+
+```
+abc
+```
+
+---
+
+# Special Character Test Data
+
+These values are used for robustness and security observation.
+
+| Value | Purpose |
+|------|---------|
 | @#$%^&* | Special Characters |
-| 中文 | Unicode Characters |
 | 😀 | Emoji |
-| ' OR 1=1 -- | SQL Injection Observation |
+| 中文 | Unicode |
 | `<script>alert(1)</script>` | XSS Observation |
+| `' OR 1=1 --` | SQL Injection Observation |
 
 ---
 
@@ -151,13 +352,14 @@ The following values are used for input validation.
 
 ---
 
-# Data Cleanup
+# Data Management
 
-During execution:
+During test execution:
 
-- Temporary bookings may be created.
-- Created bookings should be deleted after testing whenever possible.
-- Booking IDs used during testing should be recorded in the Test Execution Report.
+- Newly created Booking IDs should be recorded.
+- Deleted bookings should not be reused.
+- Temporary test data should be cleaned up whenever possible.
+- Booking IDs generated during execution should be referenced in the Test Execution Report.
 
 ---
 
@@ -176,3 +378,4 @@ During execution:
 | Version | Description |
 |----------|-------------|
 | 1.0 | Initial Test Data |
+| 1.1 | Synchronized with Authentication, Create Booking, Get Booking, Update Booking, Partial Update, Delete Booking, and Health Check test cases |
