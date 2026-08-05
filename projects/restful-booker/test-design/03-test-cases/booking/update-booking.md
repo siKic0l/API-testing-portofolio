@@ -1225,3 +1225,12 @@ This test verifies complete update persistence and ensures that the API updates 
 - Postman Collection
 - Qase Test Cases
 - API Documentation
+
+---
+
+# Update History
+
+| Version | Description |
+|----------|-------------|
+| 1.0 | Initial Update Booking Test Cases |
+| 1.1 | Added authentication, response validation, and end-to-end verification test cases |
