@@ -97,7 +97,7 @@ Returning an Internal Server Error for client input validation may also expose w
 
 # Evidence
 
-`projects/restful-booker/evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_003_FAIL.png`
+[View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_003_FAIL.png)
 
 ---
 
