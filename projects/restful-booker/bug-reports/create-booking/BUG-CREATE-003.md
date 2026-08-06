@@ -88,7 +88,7 @@ This behavior reduces API reliability and makes it difficult for API consumers t
 
 # Evidence
 
-`projects/restful-booker/evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_010_FAIL.png`
+[View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_010_FAIL.png)
 
 ---
 
