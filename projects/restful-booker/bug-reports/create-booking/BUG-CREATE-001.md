@@ -1,10 +1,10 @@
-# BUG-BOOK-001 — Internal Server Error When `firstname` Field Is Missing
+# BUG-CREATE-001 — Internal Server Error When `firstname` Field Is Missing
 
 ## Bug Information
 
 | Field | Value |
 |------|--------|
-| Bug ID | BUG-BOOK-001 |
+| Bug ID | BUG-CREATE-001 |
 | Module | Create Booking |
 | Endpoint | POST /booking |
 | Severity | High |
