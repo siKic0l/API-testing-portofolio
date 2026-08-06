@@ -20,8 +20,8 @@ The purpose of this document is to verify that the Authentication endpoint behav
 | Environment | Public Demo |
 | Base URL | https://restful-booker.herokuapp.com |
 | Tester | Nurrohmi Zaki |
-| Execution Date | - |
-| Execution Status | Not Started |
+| Execution Date | August 6, 2026 |
+| Execution Status | Finished |
 
 ---
 
@@ -29,21 +29,21 @@ The purpose of this document is to verify that the Authentication endpoint behav
 
 | Test Case ID | Test Case | Status Code | Response Time | Expected Result | Actual Result | Status | Evidence | Bug ID |
 |--------------|-----------|------------|---------------|-----------------|---------------|--------|----------|--------|
-| TC-AUTH-001 | Generate token using valid credentials | - | - | Authentication token is successfully generated. | - | Not Executed | - | - |
-| TC-AUTH-002 | Authenticate using invalid password | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-003 | Authenticate using invalid username | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-004 | Authenticate using invalid username and password | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-005 | Authenticate with empty username | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-006 | Authenticate with empty password | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-007 | Authenticate with empty username and password | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-008 | Authenticate using SQL Injection payload | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-009 | Authenticate using XSS payload | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-010 | Authenticate using special characters | - | - | Authentication request is rejected. | - | Not Executed | - | - |
-| TC-AUTH-011 | Verify response body after successful authentication | - | - | Response body contains a valid authentication token. | - | Not Executed | - | - |
-| TC-AUTH-012 | Verify response header | - | - | Response headers match the API specification. | - | Not Executed | - | - |
-| TC-AUTH-013 | Verify Content-Type header | - | - | Response Content-Type is application/json. | - | Not Executed | - | - |
-| TC-AUTH-014 | Verify response time | - | - | Response time is within the acceptable threshold. | - | Not Executed | - | - |
-| TC-AUTH-015 | Verify repeated authentication requests | - | - | Multiple authentication requests return consistent results. | - | Not Executed | - | - |
+| TC-AUTH-001 | Generate token using valid credentials | 200 | 1.07s | Authentication token is successfully generated. | Authentication token was successfully generated using valid credentials. | PASS | - | - |
+| TC-AUTH-002 | Authenticate using invalid password | 200 | 1.03s | Authentication request is rejected. | Authentication request was rejected when an invalid password was provided. | PASS | - | - |
+| TC-AUTH-003 | Authenticate using invalid username | 200 | 249ms | Authentication request is rejected. | Authentication request was rejected when an invalid username was provided. | PASS | - | - |
+| TC-AUTH-004 | Authenticate using invalid username and password | 200 | 1.02s | Authentication request is rejected. | Authentication request was rejected when both username and password were invalid. | PASS | - | - |
+| TC-AUTH-005 | Authenticate with empty username | 200 | 989ms | Authentication request is rejected. | Authentication request was rejected when the username field was empty. | PASS | - | - |
+| TC-AUTH-006 | Authenticate with empty password | 200 | 999ms | Authentication request is rejected. | Authentication request was rejected when the password field was empty. | PASS | - | - |
+| TC-AUTH-007 | Authenticate with empty username and password | 200 | 247ms | Authentication request is rejected. | Authentication request was rejected when both username and password fields were empty. | PASS | - | - |
+| TC-AUTH-008 | Authenticate using SQL Injection payload | 200 | 995ms | Authentication request is rejected. | SQL Injection payload did not bypass authentication and the request was rejected. | PASS | - | - |
+| TC-AUTH-009 | Authenticate using XSS payload | 200 | 247ms | Authentication request is rejected. | XSS payload did not bypass authentication and the request was rejected. | PASS | - | - |
+| TC-AUTH-010 | Authenticate using special characters | 200 | 246ms | Authentication request is rejected. | Authentication request was rejected when special characters were used as credentials | PASS | - | - |
+| TC-AUTH-011 | Verify response body after successful authentication | 400 | 1.02s | Response body contains a valid authentication token. | Response body successfully returned a valid authentication token after successful authentication. | PASS | - | - |
+| TC-AUTH-012 | Verify response header | 200 | 1.05s | Response headers match the API specification. | Response headers matched the expected API specification. | PASS | - | - |
+| TC-AUTH-013 | Verify Content-Type header | 404 | 253ms | Response Content-Type is application/json. | Response Content-Type was returned as application/json as expected. | PASS | - | - |
+| TC-AUTH-014 | Verify response time | 200 | 253ms | Response time is within the acceptable threshold. | Response was returned within the acceptable response time threshold. | PASS | - | - |
+| TC-AUTH-015 | Verify repeated authentication requests | 200 | 253ms | Multiple authentication requests return consistent results. | Multiple authentication requests consistently returned the expected results without any unexpected behavior. | PASS | - | - |
 
 ---
 
@@ -52,11 +52,10 @@ The purpose of this document is to verify that the Authentication endpoint behav
 | Metric | Result |
 |--------|--------|
 | Total Test Cases | 15 |
-| Passed | 0 |
+| Passed | 15 |
 | Failed | 0 |
 | Blocked | 0 |
-| Not Executed | 15 |
-| Pass Rate | 0% |
+| Pass Rate | 100% |
 | Bugs Found | 0 |
 
 ---
@@ -69,14 +68,6 @@ No defects have been identified.
 
 # Execution Notes
 
-- Test execution has not started.
-- Actual Result, Status Code, Response Time, and Evidence will be updated after each test case is executed in Postman.
+- Actual Result, Status Code, Response Time, and Evidence is updated after each test case is executed in Postman.
 - Any identified defects will be documented in the Bug Report section and linked from this document.
 
----
-
-# Conclusion
-
-Authentication test execution has not yet been performed.
-
-Once execution begins, this document will be updated with actual execution results, supporting evidence, execution metrics, and any defects identified during testing.
