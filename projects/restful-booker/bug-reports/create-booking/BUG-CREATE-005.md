@@ -95,7 +95,7 @@ Returning a server-side error for invalid client input reduces API reliability a
 
 # Evidence
 
-[View Evidence](../../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_022_FAIL.png)
+[View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_022_FAIL.png)
 
 ---
 
