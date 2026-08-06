@@ -100,7 +100,7 @@ Clients can submit requests using unsupported media types, resulting in inconsis
 
 # Evidence
 
-`projects/restful-booker/evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_019_FAIL.png`
+[View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_019_FAIL.png)
 
 ---
 
