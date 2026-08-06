@@ -1,10 +1,10 @@
-# BUG-BOOK-003 — Internal Server Error When an Empty JSON Object Is Submitted
+# BUG-CREATE-003 — Internal Server Error When an Empty JSON Object Is Submitted
 
 ## Bug Information
 
 | Field | Value |
 |------|--------|
-| Bug ID | BUG-BOOK-003 |
+| Bug ID | BUG-CREATE-003 |
 | Module | Create Booking |
 | Endpoint | POST /booking |
 | Severity | High |
