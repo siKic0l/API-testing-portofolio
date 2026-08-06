@@ -62,12 +62,23 @@ The purpose of this document is to verify that the Authentication endpoint behav
 
 # Defects Found
 
-No defects have been identified.
+No functional defects were identified during the execution of the Authentication module.
 
 ---
 
 # Execution Notes
 
-- Actual Result, Status Code, Response Time, and Evidence is updated after each test case is executed in Postman.
-- Any identified defects will be documented in the Bug Report section and linked from this document.
+- All planned Authentication test cases were successfully executed.
+- The Authentication endpoint correctly handled both valid and invalid authentication scenarios.
+- Response body, response headers, Content-Type, and endpoint consistency behaved as expected.
+- No functional defects were identified during this execution cycle.
+- Execution evidence has been captured for every executed test case.
+
+# Conclusion
+
+The Authentication module of the RESTful Booker API was successfully verified through manual API testing.
+
+All planned Authentication test cases passed successfully without any identified defects. The endpoint correctly generated authentication tokens for valid credentials, rejected invalid authentication attempts, and consistently returned responses according to the expected API behavior.
+
+Based on the executed testing scope, the Authentication endpoint is considered stable and functions as expected.
 
