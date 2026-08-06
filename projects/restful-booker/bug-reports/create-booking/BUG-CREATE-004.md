@@ -1,10 +1,10 @@
-# BUG-BOOK-004 — Invalid Content-Type Header Is Accepted During Booking Creation
+# BUG-CREATE-004 — Invalid Content-Type Header Is Accepted During Booking Creation
 
 ## Bug Information
 
 | Field | Value |
 |------|--------|
-| Bug ID | BUG-BOOK-004 |
+| Bug ID | BUG-CREATE-004 |
 | Module | Create Booking |
 | Endpoint | POST /booking |
 | Severity | Medium |
