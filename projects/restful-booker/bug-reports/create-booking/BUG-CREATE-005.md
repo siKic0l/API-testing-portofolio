@@ -1,10 +1,10 @@
-# BUG-BOOK-005 — Internal Server Error When All Request Fields Are Null
+# BUG-CREATE-005 — Internal Server Error When All Request Fields Are Null
 
 ## Bug Information
 
 | Field | Value |
 |------|--------|
-| Bug ID | BUG-BOOK-005 |
+| Bug ID | BUG-CREATE-005 |
 | Module | Create Booking |
 | Endpoint | POST /booking |
 | Severity | High |
