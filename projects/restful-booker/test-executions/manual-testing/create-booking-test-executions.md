@@ -73,13 +73,13 @@ All test cases were executed manually using **Postman** against the public RESTf
 
 Five functional issues were identified during the execution of the Create Booking module.
 
-| Bug ID | Related Test Case | Summary | Severity | Status |
-|--------|-------------------|----------|----------|--------|
-| BUG-CREATE-001 | TC-BOOK-CREATE-002 | API did not handle the request as expected when the `firstname` field was omitted. | Medium | Open |
-| BUG-CREATE-002 | TC-BOOK-CREATE-003 | API did not handle the request as expected when the `lastname` field was omitted. | Medium | Open |
-| BUG-CREATE-003 | TC-BOOK-CREATE-010 | API did not handle an empty JSON request consistently and returned an unexpected response. | Medium | Open |
-| BUG-CREATE-004 | TC-BOOK-CREATE-019 | API did not handle an invalid `Content-Type` header according to the expected behavior. | Low | Open |
-| BUG-CREATE-005 | TC-BOOK-CREATE-022 | API did not validate null values as expected and returned an inconsistent response. | Medium | Open |
+| Bug ID | Related Test Case | Summary | Severity | Status | Reports |
+|--------|-------------------|----------|----------|--------|---------|
+| BUG-CREATE-001 | TC-BOOK-CREATE-002 | API did not handle the request as expected when the `firstname` field was omitted. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-001.md) |
+| BUG-CREATE-002 | TC-BOOK-CREATE-003 | API did not handle the request as expected when the `lastname` field was omitted. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-002.md) |
+| BUG-CREATE-003 | TC-BOOK-CREATE-010 | API did not handle an empty JSON request consistently and returned an unexpected response. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-003.md) |
+| BUG-CREATE-004 | TC-BOOK-CREATE-019 | API did not handle an invalid `Content-Type` header according to the expected behavior. | Low | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-004.md) |
+| BUG-CREATE-005 | TC-BOOK-CREATE-022 | API did not validate null values as expected and returned an inconsistent response. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-005.md) |
 
 ---
 
