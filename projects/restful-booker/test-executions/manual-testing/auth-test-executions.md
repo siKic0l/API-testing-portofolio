@@ -21,7 +21,7 @@ The purpose of this document is to verify that the Authentication endpoint behav
 | Base URL | https://restful-booker.herokuapp.com |
 | Tester | Nurrohmi Zaki |
 | Execution Date | August 6, 2026 |
-| Execution Status | Finished |
+| Execution Status | Completed |
 
 ---
 
