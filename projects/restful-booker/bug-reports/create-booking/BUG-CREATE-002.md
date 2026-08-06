@@ -1,10 +1,10 @@
-# BUG-BOOK-002 — Internal Server Error When `lastname` Field Is Missing
+# BUG-CREATE-002 — Internal Server Error When `lastname` Field Is Missing
 
 ## Bug Information
 
 | Field | Value |
 |------|--------|
-| Bug ID | BUG-BOOK-002 |
+| Bug ID | BUG-CREATE-002 |
 | Module | Create Booking |
 | Endpoint | POST /booking |
 | Severity | High |
