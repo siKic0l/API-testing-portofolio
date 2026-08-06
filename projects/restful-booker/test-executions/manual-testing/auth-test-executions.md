@@ -29,7 +29,7 @@ The purpose of this document is to verify that the Authentication endpoint behav
 
 | Test Case ID | Test Case | Status Code | Response Time | Expected Result | Actual Result | Status | Evidence | Bug ID |
 |--------------|-----------|------------|---------------|-----------------|---------------|--------|----------|--------|
-| TC-AUTH-001 | Generate token using valid credentials | 200 | 1.07s | Authentication token is successfully generated. | Authentication token was successfully generated using valid credentials. | PASS | [View Evidence](../evidence/manual-testing/auth/TC_AUTH_001_PASS.png) | - |
+| TC-AUTH-001 | Generate token using valid credentials | 200 | 1.07s | Authentication token is successfully generated. | Authentication token was successfully generated using valid credentials. | PASS | [View Evidence](../../evidence/manual-testing/auth/TC_AUTH_001_PASS.png) | - |
 | TC-AUTH-002 | Authenticate using invalid password | 200 | 1.03s | Authentication request is rejected. | Authentication request was rejected when an invalid password was provided. | PASS | [View Evidence](../evidence/manual-testing/auth/TC_AUTH_002_PASS.png) | - |
 | TC-AUTH-003 | Authenticate using invalid username | 200 | 249ms | Authentication request is rejected. | Authentication request was rejected when an invalid username was provided. | PASS | [View Evidence](../evidence/manual-testing/auth/TC_AUTH_003_PASS.png) | - |
 | TC-AUTH-004 | Authenticate using invalid username and password | 200 | 1.02s | Authentication request is rejected. | Authentication request was rejected when both username and password were invalid. | PASS | [View Evidence](../evidence/manual-testing/auth/TC_AUTH_004_PASS.png) | - |
