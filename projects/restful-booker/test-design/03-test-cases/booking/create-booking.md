@@ -1556,24 +1556,24 @@ Observe how the API handles null values.
 |----------|------:|
 | Positive Testing | 2 |
 | Negative Testing | 8 |
-| Validation Testing | 8 |
-| Boundary Testing | 2 |
-| **Total Test Cases** | **20** |
+| Validation Testing | 9 |
+| Boundary Testing | 3 |
+| **Total Test Cases** | **22** |
 
 ---
 
 # Coverage Summary
 
-| Coverage | Status |
-|----------|:------:|
-| Valid Booking Creation | Yes |
-| Required Field Validation | Yes |
-| Optional Field Validation | Yes |
-| Data Type Validation | Yes |
-| Date Validation | Yes |
-| Boundary Testing | Yes |
-| Header Validation | Yes |
-| Malformed Request Validation | Yes |
+| Coverage                     | Status |
+| ---------------------------- | :----: |
+| Valid Booking Creation       |   Yes  |
+| Required Field Validation    |   Yes  |
+| Optional Field Validation    |   Yes  |
+| Data Type Validation         |   Yes  |
+| Date Validation              |   Yes  |
+| Boundary Testing             |   Yes  |
+| Header Validation            |   Yes  |
+| Malformed Request Validation |   Yes  |
 
 ---
 
