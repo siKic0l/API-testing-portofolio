@@ -60,3 +60,11 @@ The purpose of this document is to verify that booking information can be retrie
 # Defects Found
 
 No functional defects were identified during the execution of the Get Booking module.
+
+# Execution Notes
+
+A total of **12 test cases** were executed for the Get Booking module.
+
+All test cases passed successfully with no functional defects identified during execution.
+
+The endpoint consistently returned the expected HTTP status codes, response structures, and response headers. Validation scenarios involving invalid Booking IDs, boundary values, and response schema verification were handled as expected throughout the testing process.
