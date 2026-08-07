@@ -60,4 +60,4 @@ Invalid data types can be stored in booking records, reducing data integrity and
 
 ## Evidence
 
-`evidence/manual-testing/booking/update-booking/TC_BOOK_UPDATE_005_PASS.png`
+[View Evidence](../../evidence/manual-testing/booking/update-booking/TC_BOOK_UPDATE_005_PASS.png)
