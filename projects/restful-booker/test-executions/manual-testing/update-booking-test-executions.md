@@ -32,7 +32,7 @@ Testing was executed manually using **Postman** based on the predefined test cas
 | Tool | Postman |
 | Test Management | Qase.io |
 | Tester | Nurrohmi Zaki |
-| Execution Date | - |
+| Execution Date | August 7, 2026 |
 
 ---
 
