@@ -6,7 +6,9 @@ This document defines the high-level testing scenarios for the RESTful Booker AP
 
 The objective of these scenarios is to identify all major API behaviors that require validation before creating detailed test cases.
 
-Each scenario represents a business objective rather than an individual test step. These scenarios will later be decomposed into detailed test cases and executed using Postman.
+Each scenario represents a business objective rather than an individual test case. A single scenario may be decomposed into multiple detailed test cases.
+
+These scenarios will later be mapped to detailed test cases and executed using Postman.
 
 ---
 
@@ -22,13 +24,12 @@ The following API resources are included in this document.
 
 # Scenario Summary
 
-| Module | Total Scenarios |
-|----------|---------------:|
-| Authentication | 5 |
-| Booking | 28 |
-| Health Check | 2 |
-
-**Total Scenarios : 35**
+| Module         | Total Scenarios |
+| -------------- | --------------: |
+| Authentication |               5 |
+| Booking        |              28 |
+| Health Check   |               2 |
+| **Total**      |          **35** |
 
 ---
 
@@ -380,21 +381,21 @@ Low
 
 ## SC-PING-001
 
-Verify API availability.
+Verify API availability and successful response.
 
 Priority
 
-Low
+High
 
 ---
 
 ## SC-PING-002
 
-Verify API response time.
+Verify API response time and response consistency.
 
 Priority
 
-Low
+Medium
 
 ---
 
@@ -402,16 +403,16 @@ Low
 
 The following table summarizes the coverage of the API.
 
-| Endpoint | Covered |
-|-----------|:-------:|
-| POST /auth | Yes |
-| GET /booking | Yes |
-| GET /booking/{id} | Yes |
-| POST /booking | Yes |
-| PUT /booking/{id} | Yes |
-| PATCH /booking/{id} | Yes |
-| DELETE /booking/{id} | Yes |
-| GET /ping | Yes |
+| Endpoint             | Covered |
+| -------------------- | :-----: |
+| POST /auth            |   Yes   |
+| GET /booking          |   Yes   |
+| GET /booking/{id}     |   Yes   |
+| POST /booking         |   Yes   |
+| PUT /booking/{id}     |   Yes   |
+| PATCH /booking/{id}   |   Yes   |
+| DELETE /booking/{id}  |   Yes   |
+| GET /ping             |   Yes   |
 
 ---
 
@@ -425,9 +426,30 @@ The scenarios in this document were designed using the following testing techniq
 - Boundary Value Testing
 - Error Handling Validation
 - Authentication Testing
+- Data Validation
 - CRUD Validation
+- Response Validation
+- Reliability Observation
+- Performance Observation
 
 ---
+
+# Traceability Structure
+
+The relationship between testing artifacts follows this hierarchy:
+
+```text
+Test Scenario
+      ↓
+Test Case
+      ↓
+Test Execution
+      ↓
+Evidence
+      ↓
+Bug Report
+
+```
 
 # Related Documents
 
