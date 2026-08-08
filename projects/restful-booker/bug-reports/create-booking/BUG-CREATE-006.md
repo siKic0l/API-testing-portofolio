@@ -12,7 +12,7 @@
 | Status            | Open                                                                         |
 | Reported By       | Nurrohmi Zaki                                                                |
 | Report Date       | August 7, 2026                                                               |
-| Related Test Case | TC-BOOK-CREATE-022                                                           |
+| Related Test Case | TC-BOOK-CREATE-009                                                           |
 
 ---
 
