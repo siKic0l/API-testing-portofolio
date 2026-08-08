@@ -18,7 +18,6 @@ Testing was executed manually using **Postman** based on the predefined test cas
 | HTTP Method | PUT |
 | Authentication | Required |
 | Content-Type | application/json |
-| Expected Success Status | 200 OK |
 
 ---
 
