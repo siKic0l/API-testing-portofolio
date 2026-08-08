@@ -379,9 +379,9 @@ checkout dates earlier than checkin are accepted.
 
 These issues were documented as separate defects.
 
-View Update Booking Test Execution
+[view update booking test executions](test-executions/manual-testing/update-booking-test-executions.md)
 
-View Update Booking Bug Reports
+[view update booking bug reports](bug-reports/update-booking)
 
 ## Partial Update Booking
 
@@ -402,7 +402,7 @@ Blocked scenarios:
 
 These were intentionally marked BLOCKED rather than PASS or FAIL.
 
-View Partial Update Booking Test Execution
+[view partial update booking test executions](test-executions/manual-testing/partial-update-booking-test-executions.md)
 
 ## Delete Booking
 
@@ -425,7 +425,7 @@ Deleted resource retrieval
 Data integrity of unrelated bookings
 ```
 
-View Delete Booking Test Execution
+[view delete booking test executions](test-executions/manual-testing/delete-booking-test-executions.md)
 
 ## Health Check
 
@@ -446,7 +446,7 @@ with the response body:
 
 `Created`
 
-View Health Check Test Execution
+[view update booking test executions](test-executions/manual-testing/health-check-test-executions.md)
 
 ## Defect Management
 
