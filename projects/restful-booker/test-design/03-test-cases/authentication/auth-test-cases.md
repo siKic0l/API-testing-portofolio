@@ -18,7 +18,6 @@ These test cases will be executed manually using **Postman**, managed in **Qase.
 | HTTP Method | POST |
 | Authentication Required | No |
 | Content-Type | application/json |
-| Expected Success Status | 200 OK |
 
 ---
 
