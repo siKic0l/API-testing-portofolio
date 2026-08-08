@@ -354,8 +354,6 @@ Null field values
 
 [view create booking test executions](test-executions/manual-testing/create-booking-test-executions.md)
 
-[view create booking bug reports](bug-reports/create-booking)
-
 ## Update Booking
 
 18 test cases were executed.
@@ -381,8 +379,6 @@ These issues were documented as separate defects.
 
 [view update booking test executions](test-executions/manual-testing/update-booking-test-executions.md)
 
-[view update booking bug reports](bug-reports/update-booking)
-
 ## Partial Update Booking
 
 15 test cases were executed.
@@ -402,7 +398,7 @@ Blocked scenarios:
 
 These were intentionally marked BLOCKED rather than PASS or FAIL.
 
-[view partial update booking test executions](test-executions/manual-testing/partial-update-booking-test-executions.md)
+[view partial update booking test executions](test-executions/manual-testing/partial-update-test-executions.md)
 
 ## Delete Booking
 
@@ -473,7 +469,7 @@ A total of 10 defects are currently documented in the project.
 | BUG-CREATE-005 | TC-BOOK-CREATE-022 | Null values are not validated as expected.                                | Medium   |
 | BUG-CREATE-006 | TC-BOOK-CREATE-009 | Missing `bookingdates` causes an unexpected `500 Internal Server Error`.  | Medium   |
 
-View Create Booking Bug Reports
+[view create booking bug reports](bug-reports/create-booking)
 
 ## Update Booking Defects
 | Bug ID              | Related Test Case  | Description                                                      | Severity |
@@ -483,7 +479,7 @@ View Create Booking Bug Reports
 | BUG-BOOK-UPDATE-003 | TC-BOOK-UPDATE-007 | Invalid `checkin` date formats are accepted.                     | Medium   |
 | BUG-BOOK-UPDATE-004 | TC-BOOK-UPDATE-008 | `checkout` dates earlier than `checkin` are accepted.            | High     |
 
-View Update Booking Bug Reports
+[view update booking bug reports](bug-reports/update-booking)
 
 ## Test Evidence
 
@@ -528,7 +524,7 @@ Defects
 
 Qase-related documentation can be found in:
 
-View Qase Documentation
+View Qase Documentation (soon)
 
 # API Documentation
 
@@ -543,7 +539,7 @@ api-documentation/
 
 These documents provide information about the API endpoints, request methods, parameters, request bodies, responses, and API documentation references.
 
-View API Documentation
+View API Documentation (soon)
 
 # API Analysis
 
@@ -559,7 +555,7 @@ api-analysis/
 
 This phase establishes the API understanding and testing strategy before test execution.
 
-View API Analysis
+View API Analysis (soon)
 
 # Automation
 
@@ -599,7 +595,7 @@ The automation phase is the next stage of this project and will focus on:
 
 Automation is currently in progress and is not included in the completed manual testing results above.
 
-View Automation Documentation
+View Automation Documentation (soon)
 
 # Project Documentation
 
@@ -691,6 +687,7 @@ restful-booker/
 - Markdown
 - Git
 - GitHub
+
 ## Project Status
 | Phase                    |     Status    |
 | ------------------------ | :-----------: |
@@ -747,10 +744,10 @@ The project provides traceability between API analysis, test cases, manual execu
 The next phase of the project is API automation using Postman Test Scripts and Newman, building on the manual test cases and validation scenarios already established.
 
 # Related Documents
-- API Analysis
-- API Documentation
-- Test Design
-- Manual Test Execution
-- Bug Reports
-- Qase Documentation
-- Automation
+- [API Analysis](api-analysis)
+- [API Documentation](api-documentation)
+- [Test Design](test-design)
+- [Manual Test Execution](test-executions/manual-testing)
+- [Bug Reports](bug-reports)
+- [Qase Documentation](qase) (soon)
+- [Automation](automation) (soon)
