@@ -60,12 +60,6 @@ The purpose of this document is to verify that the Authentication endpoint behav
 
 ---
 
-# Defects Found
-
-No functional defects were identified during the execution of the Authentication module.
-
----
-
 # Execution Notes
 
 - All planned Authentication test cases were successfully executed.
