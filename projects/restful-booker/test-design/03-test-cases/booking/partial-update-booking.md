@@ -1055,7 +1055,7 @@ This test verifies the fundamental behavior of the PATCH method by ensuring part
 | Coverage | Status |
 |----------|:------:|
 | Partial Field Update | Yes |
-| Required Field Validation | Yes |
+| Field Value Validation | Yes |
 | Data Type Validation | Yes |
 | Date Validation | Yes |
 | Authentication Validation | Yes |
