@@ -17,7 +17,6 @@ These test cases will be executed manually using **Postman**, managed in **Qase.
 | Endpoint | `/booking/{id}` |
 | HTTP Method | DELETE |
 | Authentication | Required |
-| Expected Success Status | 201 Created |
 
 ---
 
