@@ -329,7 +329,7 @@ Pass Rate: 100%
 
 The module covered valid and invalid Booking IDs, boundary values, response schema, and response headers.
 
-link get booking exe
+[view get booking test executions](test-executions/manual-testing/get-booking-test-executions.md)
 
 ## Create Booking
 
@@ -352,9 +352,9 @@ Invalid Content-Type
 Null field values
 ```
 
-View Create Booking Test Execution
+[view create booking test executions](test-executions/manual-testing/create-booking-test-executions.md)
 
-View Create Booking Bug Reports
+[view create booking bug reports](bug-reports/create-booking)
 
 ## Update Booking
 
