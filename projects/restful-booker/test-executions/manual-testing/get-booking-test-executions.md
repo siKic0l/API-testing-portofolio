@@ -57,10 +57,6 @@ The purpose of this document is to verify that booking information can be retrie
 
 ---
 
-# Defects Found
-
-No functional defects were identified during the execution of the Get Booking module.
-
 # Execution Notes
 
 A total of **12 test cases** were executed for the Get Booking module.
