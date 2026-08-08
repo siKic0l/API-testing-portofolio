@@ -8,7 +8,7 @@
 | API | RESTful Booker |
 | Testing Type | Manual API Testing & API Automation |
 | Tester | Nurrohmi Zaki |
-| Version | 1.1 |
+| Version | 1.3 |
 | Status | In Progress |
 
 ---
@@ -19,8 +19,8 @@
 |----------|-------------|
 | 1.0 | Initial API Test Plan |
 | 1.1 | Test Design Phase Completed |
-| 1.2 | Manual API Testing Completed (Planned) |
-| 1.3 | API Automation Completed (Planned) |
+| 1.2 | Manual API Testing Completed |
+| 1.3 | API Automation Started |
 
 ---
 
