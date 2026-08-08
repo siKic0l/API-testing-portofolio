@@ -10,7 +10,9 @@ The changelog tracks major changes to the test documentation, test coverage, man
 
 ## Current Status
 
-The project has completed the core manual API testing documentation and execution workflow for the modules that have been worked on so far.
+The project has established the core manual API testing documentation and execution workflow for the modules that have been worked on so far.
+
+The current focus is on reviewing and improving the quality, consistency, and traceability of the manual testing documentation before proceeding to Qase integration and API automation.
 
 The current testing workflow is:
 
@@ -192,7 +194,7 @@ Response-time evidence was reviewed and updated where necessary because response
 
 ### Added
 
-Created manual test execution documentation for the implemented test cases.
+Created manual Test Execution documentation for the test cases that had been executed at this stage.
 
 Execution records include:
 
@@ -250,21 +252,19 @@ Individual bug reports were created using a consistent structure containing:
 
 ### Updated
 
-The identified Create Booking defects were reviewed against their corresponding test executions and evidence.
+Previously reported Create Booking defects were reviewed against their corresponding test executions and evidence.
 
-The project adopted the following execution principle:
+Bug status and resolution were updated based on the latest validation results.
 
-`A test case may remain PASS when the observed behavior satisfies the documented Expected Result, even if the behavior reveals a potential anomaly or improvement opportunity.`
+Where a defect was fixed, the corresponding test case was re-executed to verify the fix.
 
-For confirmed mismatches between Expected Result and Actual Result, the test case is marked FAIL and linked to the corresponding bug report.
+### Testing Principle
 
-### Bug Resolution
+A test case is classified as:
 
-Previously reported Create Booking defects were reviewed during the testing process.
-
-At least one previously reported Create Booking defect was subsequently fixed and revalidated.
-
-The corresponding bug report and execution documentation were updated to reflect the latest state.
+- **PASS** when the observed behavior satisfies the documented Expected Result.
+- **FAIL** when the observed behavior does not satisfy the documented Expected Result.
+- **BLOCKED** when execution cannot be completed because of an external blocking condition.
 
 ## Version 1.7 — Test Scenario Traceability Improvement
 
@@ -334,77 +334,18 @@ This allows one high-level scenario to be associated with multiple detailed Test
 
 ### Updated
 
-The master Test Scenarios documentation was reviewed and updated to establish a consistent scenario structure across the project.
+Finalized the master Test Scenario documentation and standardized scenario IDs across Authentication, Booking, and Health Check.
 
-The current scenario structure contains:
+The master scenario structure now contains:
 
-### Authentication
-```
-SC-AUTH-001 — Generate authentication token using valid credentials.
-SC-AUTH-002 — Generate authentication token using an invalid username.
-SC-AUTH-003 — Generate authentication token using an invalid password.
-SC-AUTH-004 — Generate authentication token using empty credentials.
-SC-AUTH-005 — Generate authentication token using malformed request body.
-```
+| Module | Scenarios |
+| --- | ---: |
+| Authentication | 5 |
+| Booking | 28 |
+| Health Check | 2 |
+| **Total** | **35** |
 
-### Booking — Retrieve Booking
-```
-SC-BOOK-001 — Retrieve all booking IDs.
-SC-BOOK-002 — Retrieve booking details using a valid booking ID.
-SC-BOOK-003 — Retrieve booking details using an invalid booking ID.
-SC-BOOK-004 — Retrieve booking details using a non-existing booking ID.
-SC-BOOK-005 — Retrieve booking details using an invalid endpoint format.
-```
-### Booking — Create Booking
-```
-SC-BOOK-006 — Create a booking using valid data.
-SC-BOOK-007 — Create a booking with missing required fields.
-SC-BOOK-008 — Create a booking using empty values.
-SC-BOOK-009 — Create a booking using invalid data types.
-SC-BOOK-010 — Create a booking using boundary values.
-SC-BOOK-011 — Create a booking with additional unexpected fields.
-```
-### Booking — Update Booking
-```
-SC-BOOK-012 — Update an existing booking using valid authentication.
-SC-BOOK-013 — Update booking without authentication.
-SC-BOOK-014 — Update booking using an invalid token.
-SC-BOOK-015 — Update booking using invalid request data.
-SC-BOOK-016 — Update booking using a non-existing booking ID.
-SC-BOOK-017 — Replace booking using empty values.
-```
-### Booking — Partial Update
-```
-SC-BOOK-018 — Update selected booking fields.
-SC-BOOK-019 — Update booking without authentication.
-SC-BOOK-020 — Update booking using invalid token.
-SC-BOOK-021 — Update booking using invalid field values.
-SC-BOOK-022 — Update booking using unsupported fields.
-```
-### Booking — Delete Booking
-```
-SC-BOOK-023 — Delete booking using valid authentication.
-SC-BOOK-024 — Delete booking without authentication.
-SC-BOOK-025 — Delete booking using invalid authentication.
-SC-BOOK-026 — Delete non-existing booking.
-SC-BOOK-027 — Delete the same booking twice.
-SC-BOOK-028 — Delete booking using an invalid booking ID.
-```
-### Health Check
-```
-SC-PING-001 — Verify API availability.
-SC-PING-002 — Verify API response time.
-```
-### Scenario Coverage
-
-The master Test Scenario document currently contains:
-
-| Module         | Total Scenarios |
-| -------------- | --------------: |
-| Authentication |               5 |
-| Booking        |              28 |
-| Health Check   |               2 |
-| **Total**      |          **35** |
+Scenario IDs are now used consistently by the corresponding Test Cases.
 
 ## Version 1.9 — Documentation Consistency Review
 
@@ -499,14 +440,14 @@ The Booking scenarios cover:
 
 # Current Manual Testing Progress
 
-| Area                 |    Status   |
-| -------------------- | :---------: |
-| Test Plan            |  Completed  |
-| Test Scenarios       |  Completed  |
-| Test Cases           |  Completed  |
-| Test Executions      |  Completed  |
-| Manual Evidence      |  Completed  |
-| Bug Reports          |  Completed  |
+| Area                 | Status |
+| -------------------- | :----: |
+| Test Plan            | Completed |
+| Test Scenarios       | Completed |
+| Test Cases           | In Progress |
+| Test Executions      | In Progress |
+| Manual Evidence      | In Progress |
+| Bug Reports          | In Progress |
 | Qase Integration     | Not Started |
 | Postman Test Scripts | Not Started |
 | Newman Automation    | Not Started |
@@ -583,7 +524,7 @@ Expected results.
 
 Test Execution results are supported by Postman evidence.
 
-4. Result-Based Classification
+## 4. Result-Based Classification
 
 A Test Case is marked:
 ```
@@ -626,7 +567,7 @@ Create a booking with missing required fields.
             Missing lastname
 ```
 
-##7. Evidence Traceability
+## 7. Evidence Traceability
 
 Each executed Test Case should have corresponding evidence where evidence is required.
 
@@ -703,7 +644,7 @@ The current priority is to complete the manual testing documentation and review 
 | 1.3     | Developed Health Check Test Cases.                                                                |
 | 1.4     | Added manual Test Execution documentation and evidence.                                           |
 | 1.5     | Identified and documented Create Booking defects.                                                 |
-| 1.6     | Reviewed, fixed, and revalidated identified defects.                                              |
+| 1.6     | Reviewed Create Booking defects and revalidated fixes where applicable.                           |
 | 1.7     | Improved Test Scenario ↔ Test Case traceability.                                                  |
 | 1.8     | Finalized the master Test Scenario structure and scenario IDs.                                    |
 | 1.9     | Reviewed documentation consistency across Test Cases, Test Executions, Evidence, and Bug Reports. |
