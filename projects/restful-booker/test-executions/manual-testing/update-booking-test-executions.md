@@ -75,12 +75,12 @@ Testing was executed manually using **Postman** based on the predefined test cas
 
 # Defect Summary
 
-| Bug ID | Related Test Case | Summary | Severity | Status |
-|--------|-------------------|---------|----------|--------|
-| BUG-BOOK-UPDATE-001 | TC-BOOK-UPDATE-005 | API accepts `totalprice` as a string without validating the data type. | Medium | Open |
-| BUG-BOOK-UPDATE-002 | TC-BOOK-UPDATE-006 | API accepts negative values for `totalprice` without validating business rules. | Medium | Open |
-| BUG-BOOK-UPDATE-003 | TC-BOOK-UPDATE-007 | API accepts an invalid `checkin` date format instead of enforcing the `YYYY-MM-DD` format. | Medium | Open |
-| BUG-BOOK-UPDATE-004 | TC-BOOK-UPDATE-008 | API allows `checkout` dates earlier than `checkin`, violating the booking date business rule. | High | Open |
+| Bug ID | Related Test Case | Summary | Severity | Status | Reports |
+|--------|-------------------|---------|----------|--------|---------|
+| BUG-BOOK-UPDATE-001 | TC-BOOK-UPDATE-005 | API accepts `totalprice` as a string without validating the data type. | Medium | Open | [View Reports](../../bug-reports/update-booking/BUG-BOOK-UPDATE-001.md) |
+| BUG-BOOK-UPDATE-002 | TC-BOOK-UPDATE-006 | API accepts negative values for `totalprice` without validating business rules. | Medium | Open | [View Reports](../../bug-reports/update-booking/BUG-BOOK-UPDATE-002.md) |
+| BUG-BOOK-UPDATE-003 | TC-BOOK-UPDATE-007 | API accepts an invalid `checkin` date format instead of enforcing the `YYYY-MM-DD` format. | Medium | Open | [View Reports](../../bug-reports/update-booking/BUG-BOOK-UPDATE-003.md) |
+| BUG-BOOK-UPDATE-004 | TC-BOOK-UPDATE-008 | API allows `checkout` dates earlier than `checkin`, violating the booking date business rule. | High | Open | [View Reports](../../bug-reports/update-booking/BUG-BOOK-UPDATE-004.md) |
 
 ---
 
