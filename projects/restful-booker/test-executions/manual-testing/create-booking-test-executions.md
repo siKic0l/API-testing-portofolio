@@ -39,7 +39,7 @@ All test cases were executed manually using **Postman** against the public RESTf
 | TC-BOOK-CREATE-006 | Create booking with empty firstname | 200 | 255ms | API processes the request consistently. API either accepts or rejects the empty value according to its validation rules. No unexpected server error occurs. | Booking was successfully created with an empty `firstname` value and the API handled the request consistently. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_006_PASS.png) | - |
 | TC-BOOK-CREATE-007 | Create booking with empty lastname | 200 | 1.07s | API handles the request correctly. No unexpected server error occurs. | Booking was successfully created with an empty `lastname` value and the API handled the request consistently. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_007_PASS.png) | - |
 | TC-BOOK-CREATE-008 | Create booking without additionalneeds | 200 | 259ms | API handles optional fields correctly. Booking is created if the field is optional. | Booking was successfully created without the `additionalneeds` field, indicating that the field is optional. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_008_PASS.png) | - |
-| TC-BOOK-CREATE-009 | Create booking without bookingdates | 500 | 258ms | API validates missing booking dates appropriately. No unexpected server error occurs. | The API returned a consistent response when the `bookingdates` object was omitted and no unexpected server error occurred. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_009_PASS.png) | - |
+| TC-BOOK-CREATE-009 | Create booking without bookingdates | 500 | 258ms | API validates missing booking dates appropriately. No unexpected server error occurs. | API returned 500 Internal Server Error when the bookingdates object was omitted. This is an unexpected server error and does not satisfy the expected behavior. | FAIL | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_009_FAIL.png) | BUG-CREATE-006 |
 | TC-BOOK-CREATE-010 | Create booking using an empty JSON object | 500 | 1.18s | API rejects or handles the request consistently. No unexpected server error occurs. | The API returned an unexpected response when an empty JSON object was submitted, which did not match the expected behavior defined in the test case. | FAIL | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_010_FAIL.png) | BUG-CREATE-003 |
 | TC-BOOK-CREATE-011 | Create booking with negative totalprice | 200 | 1.01s | API handles negative numeric values correctly. No unexpected server error occurs. Validation behavior is consistent. | The API handled the negative `totalprice` value consistently without producing an unexpected server error. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_011_PASS.png) | - |
 | TC-BOOK-CREATE-012 | Create booking with totalprice as a string | 200 | 250ms | API validates the incorrect data type. No unexpected server error occurs. | The API handled the request consistently when `totalprice` was submitted as a string. | PASS | [View Evidence](../../evidence/manual-testing/booking/create-booking/TC_BOOK_CREATE_012_PASS.png) | - |
@@ -61,11 +61,11 @@ All test cases were executed manually using **Postman** against the public RESTf
 | Metric | Result |
 |--------|--------|
 | Total Test Cases | 22 |
-| Passed | 17 |
-| Failed | 5 |
+| Passed | 16 |
+| Failed | 6 |
 | Blocked | 0 |
-| Pass Rate | 77.27% |
-| Bugs Found | 5 |
+| Pass Rate | 72.73% |
+| Bugs Found | 6 |
 
 ---
 
@@ -80,6 +80,7 @@ Five functional issues were identified during the execution of the Create Bookin
 | BUG-CREATE-003 | TC-BOOK-CREATE-010 | API did not handle an empty JSON request consistently and returned an unexpected response. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-003.md) |
 | BUG-CREATE-004 | TC-BOOK-CREATE-019 | API did not handle an invalid `Content-Type` header according to the expected behavior. | Low | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-004.md) |
 | BUG-CREATE-005 | TC-BOOK-CREATE-022 | API did not validate null values as expected and returned an inconsistent response. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-005.md) |
+| BUG-CREATE-006 | TC-BOOK-CREATE-009 | API returned 500 Internal Server Error when the bookingdates object was omitted instead of handling the missing booking dates appropriately. | Medium | Open | [View Reports](../../bug-reports/create-booking/BUG-CREATE-006.md) |
 
 ---
 
@@ -99,6 +100,6 @@ The Create Booking module was successfully evaluated through manual API testing 
 
 A total of 22 test cases were executed, covering positive, negative, validation, boundary, and HTTP behavior scenarios.
 
-Out of 22 executed test cases, 17 passed successfully while 5 failed because the API behavior differed from the expected results defined in the test cases.
+Out of 22 executed test cases, 16 passed successfully while 6 failed because the API behavior differed from the expected results defined in the test cases.
 
 Overall, the Create Booking endpoint is able to process booking requests correctly in most scenarios. However, several validation and request-handling behaviors require improvement to ensure consistent API responses for invalid and unexpected inputs.
