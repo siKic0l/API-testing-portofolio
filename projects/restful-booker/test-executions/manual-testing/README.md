@@ -35,13 +35,13 @@ The following RESTful Booker API endpoints are covered.
 
 | Module | Endpoint | Status |
 |---------|----------|--------|
-| Authentication | POST /auth | Ready for Execution |
-| Create Booking | POST /booking | Ready for Execution |
-| Get Booking | GET /booking/{id} | Ready for Execution |
-| Update Booking | PUT /booking/{id} | Ready for Execution |
-| Partial Update | PATCH /booking/{id} | Ready for Execution |
-| Delete Booking | DELETE /booking/{id} | Ready for Execution |
-| Health Check | GET /ping | Ready for Execution |
+| Authentication | POST /auth | Executed |
+| Create Booking | POST /booking | Executed |
+| Get Booking | GET /booking/{id} | Executed |
+| Update Booking | PUT /booking/{id} | Executed |
+| Partial Update | PATCH /booking/{id} | Executed |
+| Delete Booking | DELETE /booking/{id} | Executed |
+| Health Check | GET /ping | Executed |
 
 ---
 
