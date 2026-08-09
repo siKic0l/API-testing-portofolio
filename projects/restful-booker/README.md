@@ -60,7 +60,7 @@ The main objectives of this project are to:
 | API Type | REST API |
 | Data Format | JSON |
 | Authentication | Token-based |
-| API Documentation | Swagger / OpenAPI |
+| API Documentation | Postman API |
 | Testing Client | Postman |
 
 ---
