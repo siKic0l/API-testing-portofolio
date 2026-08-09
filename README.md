@@ -288,7 +288,7 @@ Each API Testing project includes:
 | Repository | Description |
 |------------|-------------|
 | Manual Testing Portfolio | Manual QA projects using OrangeHRM |
-| API Testing Portfolio | REST API Testing using Swagger & Postman |
+| API Testing Portfolio | REST API Testing using Postman |
 | Playwright Automation *(Coming Soon)* | UI Automation Testing |
 
 ---
