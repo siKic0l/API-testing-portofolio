@@ -88,7 +88,7 @@ Five functional issues were identified during the execution of the Create Bookin
 
 - All planned Create Booking test cases were executed.
 - Positive, negative, validation, boundary, and HTTP behavior scenarios were covered.
-- Five test cases failed because the API behavior did not match the expected behavior defined in the corresponding test cases.
+- Six test cases failed because the API behavior did not match the expected behavior defined in the corresponding test cases.
 - The remaining test cases behaved consistently with the expected results.
 - Execution evidence was captured for every executed test case.
 
