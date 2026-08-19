@@ -704,7 +704,7 @@ restful-booker/
 | Defect Identification    |  Completed  |
 | Bug Reporting            |  Completed  |
 | Qase Test Management     |  Documented |
-| Postman Automation       | In Progress |
+| Postman Automation       |   Planned   |
 | Newman Execution         |   Planned   |
 | Automation Reporting     |   Planned   |
 | Final Project Report     |   Planned   |
@@ -749,5 +749,5 @@ The next phase of the project is API automation using Postman Test Scripts and N
 - [Test Design](test-design)
 - [Manual Test Execution](test-executions/manual-testing)
 - [Bug Reports](bug-reports)
-- [Qase Documentation](qase) (soon)
+- [Qase Documentation](qase)
 - [Automation](automation) (soon)
