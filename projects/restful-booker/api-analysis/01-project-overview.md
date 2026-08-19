@@ -58,16 +58,16 @@ The API is commonly used for:
 
 # Scope of Testing
 
-The following API features will be covered during this project.
+The following API features were covered in this project.
 
 | Module | Status |
 |---------|--------|
-| Authentication | Planned |
-| Booking Management | Planned |
-| Partial Update | Planned |
-| Full Update | Planned |
-| Delete Booking | Planned |
-| Health Check | Planned |
+| Authentication | Completed — 15/15 passed |
+| Booking Management | Completed — 6 defects found |
+| Partial Update | Completed — 2 blocked |
+| Full Update | Completed — 18/18 passed |
+| Delete Booking | Completed — 10/10 passed |
+| Health Check | Completed — 5/5 passed |
 
 ---
 

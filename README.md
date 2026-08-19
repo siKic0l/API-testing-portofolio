@@ -32,7 +32,46 @@ The goals of this repository are to:
 
 | Project | Status |
 |---------|--------|
-| Restful Booker API | In Progress |
+| Restful Booker API | Manual Testing Completed |
+
+# Execution Summary
+
+Manual API testing for the Restful Booker API has been completed and recorded in Qase.io.
+Figures below use the latest execution result per unique test case.
+
+| Metric | Result |
+|--------|-------:|
+| Test Cases | 97 |
+| Passed | 89 |
+| Failed | 6 |
+| Blocked | 2 |
+| Pass Rate | 91.75% |
+| Bug Reports | 10 |
+| Execution Date | August 13, 2026 |
+
+**Public Qase Report:** https://app.qase.io/public/report/debcf3c66ec50d7471d709188741133f6fefc744
+
+## Results by Test Suite
+
+| Test Suite | Total | Passed | Failed | Blocked | Pass Rate |
+|------------|------:|-------:|-------:|--------:|----------:|
+| Authentication | 15 | 15 | 0 | 0 | 100% |
+| Create Booking | 22 | 16 | 6 | 0 | 72.73% |
+| Get Booking | 12 | 12 | 0 | 0 | 100% |
+| Update Booking | 18 | 18 | 0 | 0 | 100% |
+| Partial Update Booking | 15 | 13 | 0 | 2 | 86.67% |
+| Delete Booking | 10 | 10 | 0 | 0 | 100% |
+| Health Check | 5 | 5 | 0 | 0 | 100% |
+
+All 6 failed test cases belong to the Create Booking suite and relate to missing required
+field validation returning `500 Internal Server Error` instead of a client error response.
+
+## Scope Note
+
+This project currently covers **manual API testing and test management only**.
+The `automation` directory contains the intended folder structure, but the Postman collection
+and Newman execution have **not been implemented yet** — they are listed under the planned
+roadmap below rather than as completed work.
 
 ---
 
@@ -166,7 +205,6 @@ This repository includes:
 - Endpoint Analysis
 - REST API Testing
 - Manual API Testing
-- Postman Automation
 - Test Design
 - Test Execution
 - Bug Reporting
@@ -256,9 +294,9 @@ Each API Testing project includes:
 |---------|------:|
 | Projects | 1 |
 | APIs Tested | 1 |
-| Test Cases | Coming Soon |
-| Automated Requests | Coming Soon |
-| Bug Reports | Coming Soon |
+| Test Cases | 97 |
+| Automated Requests | Not started — planned |
+| Bug Reports | 10 |
 
 ---
 
@@ -270,10 +308,10 @@ Each API Testing project includes:
 - Postman
 - Swagger
 - API Test Design
-- Postman Automation
 
 ## Planned
 
+- Postman Automation
 - Newman CLI
 - REST Assured
 - PyTest API Testing
@@ -287,8 +325,8 @@ Each API Testing project includes:
 
 | Repository | Description |
 |------------|-------------|
-| Manual Testing Portfolio | Manual QA projects using OrangeHRM |
-| API Testing Portfolio | REST API Testing using Postman |
+| [Manual Testing Portfolio](https://github.com/siKic0l/OrangeHRMdemo-Manual-Testing-Portofolio) | Manual QA project using OrangeHRM — completed |
+| API Testing Portfolio | REST API Testing using Postman — this repository |
 | Playwright Automation *(Coming Soon)* | UI Automation Testing |
 
 ---
